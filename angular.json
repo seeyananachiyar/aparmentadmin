@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "hospital_management": {
+    "apartment_management": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/hospital_management",
+            "outputPath": "dist/apartment_management",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -25,9 +25,39 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/datatables.net-dt/css/jquery.dataTables.min.css",
+              "node_modules/@fortawesome/fontawesome-free/css/all.min.css", 
+              "node_modules/icon-kit/dist/css/iconkit.min.css",
+              "node_modules/ionicons/dist/css/ionicons.min.css",
+              "node_modules/perfect-scrollbar/css/perfect-scrollbar.css",
+              "node_modules/datatables.net-dt/css/jquery.dataTables.min.css",
+              "node_modules/tempusdominus-bootstrap-4/build/css/tempusdominus-bootstrap-4.min.css", 
+              "node_modules/weather-icons/css/weather-icons.min.css", 
+              "node_modules/perfect-scrollbar/css/perfect-scrollbar.css",
+              "node_modules/owl.carousel/dist/assets/owl.carousel.css", 
+              "node_modules/owl.carousel/dist/assets/owl.theme.default.css",
+              "node_modules/ngx-toastr/toastr.css",
+              "node_modules/ngx-spinner/animations/ball-scale-multiple.css",
+              "node_modules/ngx-spinner/animations/square-jelly-box.css",
+              "src/assets/dist/css/theme.min.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/dist/js/vendor/modernizr-2.8.3.min.js", 
+              "src/assets/dist/js/vendor/jquery-3.3.1.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+              "node_modules/jquery/dist/jquery.js",
+              "node_modules/datatables.net/js/jquery.dataTables.min.js",
+              "src/assets/dist/js/theme.js",
+              "node_modules/popper.js/dist/umd/popper.min.js", 
+              "node_modules/perfect-scrollbar/dist/perfect-scrollbar.min.js", 
+              "node_modules/screenfull/dist/screenfull.js",
+              "node_modules/datatables.net/js/jquery.dataTables.min.js",
+              "node_modules/datatables.net-responsive/js/dataTables.responsive.min.js",
+              "node_modules/moment/moment.js",
+              "node_modules/tempusdominus-bootstrap-4/build/js/tempusdominus-bootstrap-4.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -51,7 +81,13 @@
               "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
-              "namedChunks": true
+              "namedChunks": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.development.ts"
+                }
+              ]
             }
           },
           "defaultConfiguration": "production"
@@ -60,10 +96,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "hospital_management:build:production"
+              "browserTarget": "apartment_management:build:production"
             },
             "development": {
-              "browserTarget": "hospital_management:build:development"
+              "browserTarget": "apartment_management:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -71,7 +107,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "hospital_management:build"
+            "browserTarget": "apartment_management:build"
           }
         },
         "test": {
@@ -94,5 +130,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "07e8ca87-fe71-46fc-8f79-e328294f9e5d"
   }
 }
